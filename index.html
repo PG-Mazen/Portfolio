@@ -1,0 +1,654 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Mazen Abdelsalam Portfolio</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap">
+<style>
+:root{
+  /* Layout concept: a datasheet. A sticky label column names each section on the left and the content runs on the right. The hero pairs the name and value statement with a trace of how the Unit Testing Generator runs. */
+  --bg:#F5F8FC;
+  --surface:#FFFFFF;
+  --ink:#0E1A2B;
+  --ink-2:#42526A;
+  --line:#D2DBE7;
+  --accent:#004F90;
+  --accent-ink:#FFFFFF;
+  --accent-soft:#E3EEF9;
+  --f-display:"Newsreader","Iowan Old Style","Palatino Linotype",Georgia,serif;
+  --f-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --gutter:clamp(16px,4vw,40px);
+  --rail:176px;
+  --header-h:57px;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0A1220;
+    --surface:#101B2D;
+    --ink:#E8EEF6;
+    --ink-2:#A3B3C8;
+    --line:#22324A;
+    --accent:#74B4F4;
+    --accent-ink:#06111F;
+    --accent-soft:#122B47;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0A1220;
+  --surface:#101B2D;
+  --ink:#E8EEF6;
+  --ink-2:#A3B3C8;
+  --line:#22324A;
+  --accent:#74B4F4;
+  --accent-ink:#06111F;
+  --accent-soft:#122B47;
+  color-scheme:dark;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:1.0625rem;line-height:1.6}
+h1,h2,h3,p,ul,ol,dl,dd,dt{margin:0}
+ul,ol{padding:0;list-style:none}
+a{color:var(--accent);text-underline-offset:.2em}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+section[id],article[id]{scroll-margin-top:calc(var(--header-h) + 12px)}
+
+.wrap{max-width:1160px;margin-inline:auto;padding-inline:var(--gutter)}
+.skip{position:absolute;left:var(--gutter);top:-56px;background:var(--accent);color:var(--accent-ink);padding:8px 14px;border-radius:4px;z-index:30;text-decoration:none}
+.skip:focus{top:8px}
+.mono-label{font:500 .72rem/1.3 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+
+/* Header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+@supports (background:color-mix(in srgb,red 50%,blue)){
+  .top{background:color-mix(in srgb,var(--bg) 90%,transparent);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+}
+.top .wrap{display:flex;align-items:center;gap:28px;min-height:var(--header-h)}
+.brand{font:600 1.1rem/1 var(--f-display);color:var(--ink);text-decoration:none;white-space:nowrap;letter-spacing:-.005em}
+.nav{min-width:0;flex:1;overflow-x:auto;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav ul{display:flex;gap:22px;justify-content:flex-end;width:max-content;margin-left:auto}
+.nav a{display:block;padding:.4rem 0;color:var(--ink-2);text-decoration:none;font-size:.9rem;font-weight:500;white-space:nowrap;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--ink);border-bottom-color:var(--accent)}
+@media (max-width:760px){
+  :root{--header-h:49px}
+  .brand{display:none}
+  .nav ul{justify-content:flex-start;margin-left:0}
+}
+
+/* Hero */
+.hero{padding-block:clamp(32px,6vw,76px) clamp(28px,4vw,48px)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:clamp(28px,5vw,68px);align-items:start}
+.eyebrow{font:500 .78rem/1.4 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+h1{font:500 clamp(2.5rem,6.4vw,4.6rem)/1.02 var(--f-display);letter-spacing:-.025em;margin-top:.9rem;text-wrap:balance}
+.role{font-size:clamp(1.1rem,2vw,1.3rem);line-height:1.45;color:var(--ink-2);margin-top:1rem;max-width:34ch;text-wrap:balance}
+.status{display:inline-block;margin-top:1.1rem;font:500 .78rem/1 var(--f-mono);padding:.6em .85em;border-radius:3px;background:var(--accent-soft);color:var(--accent)}
+.usp{margin-top:clamp(24px,4vw,40px);padding-top:20px;border-top:1px solid var(--line);display:grid;gap:14px}
+.usp-en{font:400 clamp(1.3rem,2.5vw,1.7rem)/1.35 var(--f-display);text-wrap:pretty}
+.actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:clamp(22px,3vw,32px)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:.72em 1.2em;border-radius:4px;border:1px solid var(--accent);font:500 .95rem/1.2 var(--f-body);text-decoration:none;cursor:pointer}
+.btn-primary{background:var(--accent);color:var(--accent-ink)}
+.btn-primary:hover{filter:brightness(1.1)}
+.btn-ghost{background:transparent;color:var(--accent)}
+.btn-ghost:hover{background:var(--accent-soft)}
+.note{font-size:.85rem;color:var(--ink-2)}
+
+.trace{background:var(--surface);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.trace-h{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:12px 16px;border-bottom:1px solid var(--line);background:var(--accent-soft)}
+.trace-h .mono-label{color:var(--accent)}
+.trace ol{counter-reset:step}
+.trace li{counter-increment:step;display:grid;grid-template-columns:2rem minmax(0,1fr);gap:10px;padding:14px 16px;border-bottom:1px solid var(--line)}
+.trace li::before{content:counter(step,decimal-leading-zero);font:500 .75rem/1.9 var(--f-mono);color:var(--accent)}
+.trace h3{font:600 .95rem/1.4 var(--f-body)}
+.trace li p{font-size:.9rem;line-height:1.5;color:var(--ink-2);margin-top:2px}
+.trace-f{padding:12px 16px;font-size:.9rem}
+@media (max-width:900px){.hero-grid{grid-template-columns:minmax(0,1fr)}}
+
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px 24px;margin-top:clamp(28px,5vw,52px);padding-block:20px;border-block:1px solid var(--line)}
+.facts dt{margin-bottom:4px}
+.facts dd strong{display:block;font:500 1.15rem/1.3 var(--f-display)}
+.facts dd span{display:block;font-size:.85rem;line-height:1.4;color:var(--ink-2)}
+@media (max-width:760px){.facts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Sections */
+.sec{border-top:1px solid var(--line);padding-block:clamp(40px,7vw,76px)}
+.sec-grid{display:grid;grid-template-columns:var(--rail) minmax(0,1fr);gap:clamp(24px,4vw,56px)}
+.label{position:sticky;top:calc(env(safe-area-inset-top,0px) + var(--header-h) + 28px);align-self:start}
+.label h2{font:500 .78rem/1.3 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.label p{margin-top:.5rem;font-size:.88rem;line-height:1.45;color:var(--ink-2);max-width:22ch}
+@media (max-width:820px){
+  .sec-grid{grid-template-columns:minmax(0,1fr)}
+  .label{position:static}
+  .label p{max-width:none}
+}
+.body{min-width:0}
+.prose{max-width:62ch}
+.prose p+p{margin-top:1em}
+.prose p{text-wrap:pretty}
+
+h3.t{font:500 1.5rem/1.2 var(--f-display);letter-spacing:-.01em;text-wrap:balance}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tags li{font:400 .78rem/1 var(--f-mono);padding:.5em .7em;border:1px solid var(--line);border-radius:3px;background:var(--surface)}
+.ext{font-size:.9rem;font-weight:500;white-space:nowrap}
+
+/* Projects */
+.proj{padding-block:clamp(24px,4vw,36px);border-top:1px solid var(--line)}
+.proj:first-child{border-top:0;padding-top:0}
+.proj-h{display:flex;justify-content:space-between;align-items:flex-start;gap:8px 24px;flex-wrap:wrap}
+.proj-h .mono-label{margin-bottom:6px;color:var(--accent)}
+.case{margin-top:18px}
+.case>div{display:grid;grid-template-columns:7rem minmax(0,1fr);gap:6px 20px;padding:14px 0;border-top:1px solid var(--line)}
+.case dt{font:500 .72rem/1.9 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+.case dd p{text-wrap:pretty}
+.case dd li{padding-left:1.1em;position:relative;text-wrap:pretty}
+.case dd li+li{margin-top:.5em}
+.case dd li::before{content:"";position:absolute;left:0;top:.72em;width:.5em;height:1px;background:var(--accent)}
+@media (max-width:600px){.case>div{grid-template-columns:minmax(0,1fr)}}
+
+/* Services */
+.svc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.svc article{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:22px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.svc h3{font:500 1.25rem/1.25 var(--f-display);text-wrap:balance}
+.svc p{font-size:.95rem;line-height:1.55;color:var(--ink-2)}
+.svc .proof{margin-top:auto;padding-top:12px;border-top:1px solid var(--line);font-size:.88rem;color:var(--ink)}
+.svc .proof .mono-label{display:block;margin-bottom:2px}
+@media (max-width:640px){.svc{grid-template-columns:minmax(0,1fr)}}
+
+/* Skills */
+.skills>div{display:grid;grid-template-columns:11rem minmax(0,1fr);gap:8px 20px;padding:18px 0;border-top:1px solid var(--line)}
+.skills>div:first-child{border-top:0;padding-top:0}
+.skills dt{font:500 .72rem/2 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+@media (max-width:600px){.skills>div{grid-template-columns:minmax(0,1fr)}}
+
+/* Achievements */
+.big{display:flex;flex-wrap:wrap;gap:12px 48px;margin-bottom:28px}
+.big p{font:500 clamp(2.2rem,5vw,3.2rem)/1 var(--f-display);letter-spacing:-.02em}
+.big span{display:block;margin-top:6px;font:400 .85rem/1.3 var(--f-body);letter-spacing:0;color:var(--ink-2)}
+.stand{display:grid;grid-template-columns:5.4rem minmax(0,1fr) minmax(9.5rem,12rem);gap:6px 20px;padding:16px 0;border-top:1px solid var(--line);align-items:start}
+.stand time{font:400 .8rem/1.7 var(--f-mono);color:var(--ink-2)}
+.stand .what strong{display:block;font-weight:600;line-height:1.4}
+.stand .what span{display:block;margin-top:2px;font-size:.9rem;line-height:1.45;color:var(--ink-2)}
+.score-row{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.rank{font:500 .92rem/1.4 var(--f-mono)}
+.pct{font:500 .78rem/1.4 var(--f-mono);color:var(--accent)}
+.bar{height:6px;margin-top:6px;border-radius:3px;background:var(--accent-soft);overflow:hidden}
+.bar span{display:block;height:100%;background:var(--accent)}
+.stand.plain .score{display:none}
+.stand.plain{grid-template-columns:5.4rem minmax(0,1fr)}
+.fine{margin-top:16px;font-size:.82rem;line-height:1.5;color:var(--ink-2);max-width:62ch}
+.links{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:18px;font-weight:500;font-size:.95rem}
+@media (max-width:640px){
+  .stand,.stand.plain{grid-template-columns:minmax(0,1fr)}
+}
+
+/* Experience and education */
+.entry{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 24px;padding:20px 0;border-top:1px solid var(--line)}
+.entry:first-child{border-top:0;padding-top:0}
+.entry h3{font:600 1.02rem/1.4 var(--f-body)}
+.entry .org{color:var(--ink-2);font-size:.95rem}
+.entry time{font:400 .8rem/1.9 var(--f-mono);color:var(--ink-2);text-align:right;white-space:nowrap}
+.entry .more{grid-column:1/-1;margin-top:8px;display:grid;gap:10px}
+.entry .more li{padding-left:1.1em;position:relative;text-wrap:pretty}
+.entry .more li::before{content:"";position:absolute;left:0;top:.72em;width:.5em;height:1px;background:var(--accent)}
+.sub{margin:28px 0 4px;padding-top:24px;border-top:1px solid var(--line)}
+.sub+.entry{border-top:0;padding-top:12px}
+@media (max-width:560px){
+  .entry{grid-template-columns:minmax(0,1fr)}
+  .entry time{text-align:left}
+}
+
+/* Contact */
+.cta{font:500 clamp(1.9rem,4.4vw,3rem)/1.1 var(--f-display);letter-spacing:-.02em;text-wrap:balance;max-width:20ch}
+.cta-p{margin-top:14px;max-width:52ch;color:var(--ink-2);text-wrap:pretty}
+.contact{margin-top:28px}
+.contact>div{display:grid;grid-template-columns:6.5rem minmax(0,1fr) auto;gap:6px 16px;align-items:center;padding:14px 0;border-top:1px solid var(--line)}
+.contact dt{font:500 .72rem/1.5 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+.contact .val{overflow-wrap:anywhere;font-weight:500}
+.contact .act{display:flex;gap:8px}
+.mini{display:inline-block;padding:.5em .8em;border:1px solid var(--line);border-radius:3px;background:var(--surface);color:var(--ink);font:500 .75rem/1.2 var(--f-mono);text-decoration:none;cursor:pointer}
+.mini:hover{border-color:var(--accent);color:var(--accent)}
+@media (max-width:600px){
+  .contact>div{grid-template-columns:minmax(0,1fr)}
+}
+
+.foot{border-top:1px solid var(--line);padding-block:28px 40px}
+.foot .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;font:400 .8rem/1.5 var(--f-mono);color:var(--ink-2)}
+</style>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">Mazen Abdelsalam</a>
+    <nav class="nav" aria-label="Sections">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div id="top" class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <p class="eyebrow">AI engineering · Cairo University · Class of 2027</p>
+          <h1>Mazen Mohamed Abdelsalam</h1>
+          <p class="role">AI engineering student focused on LLM applications and RAG.</p>
+          <p class="status">Open to AI engineering internships</p>
+
+          <div class="usp">
+            <p class="mono-label">Value proposition</p>
+            <p class="usp-en" lang="en">I help engineering teams build reliable LLM-powered tools through strict prompt design, local input validation, and competition-grade algorithmic thinking.</p>
+          </div>
+
+          <div class="actions">
+            <a class="btn btn-primary" href="#contact">Get in touch</a>
+            <a class="btn btn-ghost" id="cv-link" href="Mazen-Mohamed-Resume.pdf" target="_blank" rel="noopener">Download CV</a>
+            <span class="note" id="cv-note" role="status"></span>
+          </div>
+        </div>
+
+        <aside class="trace" aria-label="How the Unit Testing Generator works">
+          <div class="trace-h">
+            <span class="mono-label">Unit Testing Generator</span>
+            <span class="mono-label">One run, step by step</span>
+          </div>
+          <ol>
+            <li>
+              <div><h3>Choose a file</h3><p>An interactive terminal menu takes the path to a Python file.</p></div>
+            </li>
+            <li>
+              <div><h3>Parse locally</h3><p>Python's <code style="font-family:var(--f-mono);font-size:.85em">ast</code> library extracts valid, single-function blocks. Nothing else reaches the model.</p></div>
+            </li>
+            <li>
+              <div><h3>Prompt with rules</h3><p>A strict system prompt enforces Arrange, Act, Assert and mocks external dependencies.</p></div>
+            </li>
+            <li>
+              <div><h3>Call the model</h3><p>Llama-3.3 on the Groq API, driven through LangChain.</p></div>
+            </li>
+            <li>
+              <div><h3>Save the tests</h3><p>The pytest suite is written to the matching local directory with <code style="font-family:var(--f-mono);font-size:.85em">pathlib</code>.</p></div>
+            </li>
+          </ol>
+          <div class="trace-f"><a href="#p-tests">Read the case study</a></div>
+        </aside>
+      </div>
+
+      <dl class="facts">
+        <div><dt class="mono-label">Studying</dt><dd><strong>B.Sc. Artificial Intelligence</strong><span>Cairo University, Giza</span></dd></div>
+        <div><dt class="mono-label">Class rank</dt><dd><strong>20th of 170+</strong><span>AI Department, GPA 3.42 / 4.0</span></dd></div>
+        <div><dt class="mono-label">Problems solved</dt><dd><strong>2000+</strong><span>across 110+ online contests</span></dd></div>
+        <div><dt class="mono-label">Graduating</dt><dd><strong>Jun 2027</strong><span>expected</span></dd></div>
+      </dl>
+    </div>
+  </div>
+
+  <section class="sec" id="about" aria-labelledby="h-about">
+    <div class="wrap sec-grid">
+      <div class="label"><h2 id="h-about">About</h2><p>Who I am and how I work</p></div>
+      <div class="body prose">
+        <p>I am a final-year AI student at Cairo University. I like turning language models into tools that behave, and my unit test generator shows how I work. It checks the code locally, sends the model only what it can handle, and holds the output to the Arrange, Act, Assert standard.</p>
+        <p>Competitive programming taught me to test the edge cases first. I have solved 2000+ problems, ranked 40th of 430+ teams at the ICPC Egyptian Collegiate Programming Contest, and qualified for Round 2 of the Meta Hacker Cup. In 2024 and 2025 I coached 100+ students and helped write contest problems with full solutions and test cases.</p>
+        <p>I am looking for an AI engineering internship on a team building LLM applications or RAG systems.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="projects" aria-labelledby="h-projects">
+    <div class="wrap sec-grid">
+      <div class="label"><h2 id="h-projects">Projects</h2><p>Three projects, each with the problem and approach</p></div>
+      <div class="body">
+
+        <article class="proj" id="p-tests">
+          <div class="proj-h">
+            <div>
+              <p class="mono-label">LLM tooling · Python</p>
+              <h3 class="t">Automated Unit Testing Generator</h3>
+            </div>
+            <a class="ext" href="https://github.com/PG-Mazen/Unit-Testing-using-Langchain" target="_blank" rel="noopener">View on GitHub ↗</a>
+          </div>
+          <dl class="case">
+            <div><dt>Problem</dt><dd><p>Asking a language model for unit tests breaks down when the input is not a clean single function and when the model ignores testing conventions. Every failed attempt also costs an API call.</p></dd></div>
+            <div><dt>Approach</dt><dd>
+              <ul>
+                <li>Built a Python command-line app that generates pytest scripts for any Python function using LangChain and the Groq API (Llama-3.3).</li>
+                <li>Parses source files locally with the <code style="font-family:var(--f-mono);font-size:.88em">ast</code> library, so the model only receives valid, single-function code blocks. This prevents errors and cuts API calls.</li>
+                <li>Wrote strict system prompts that enforce the Arrange, Act, Assert standard and mock external dependencies correctly.</li>
+                <li>Added an interactive terminal menu that takes a file path and saves the new test suite in the matching local directory with <code style="font-family:var(--f-mono);font-size:.88em">pathlib</code>.</li>
+              </ul>
+            </dd></div>
+            <div><dt>Stack</dt><dd><ul class="tags"><li>Python</li><li>LangChain</li><li>Groq API (Llama-3.3)</li><li>Pytest</li><li>Prompt engineering</li></ul></dd></div>
+          </dl>
+        </article>
+
+        <article class="proj" id="p-hackathon">
+          <div class="proj-h">
+            <div>
+              <p class="mono-label">HERE Cairo Geospatial Student Hackathon 2026</p>
+              <h3 class="t">Spatial Road Pattern Detection</h3>
+            </div>
+          </div>
+          <dl class="case">
+            <div><dt>Problem</dt><dd><p>Find spatial patterns in large geospatial datasets within the time limit of a hackathon.</p></dd></div>
+            <div><dt>Approach</dt><dd>
+              <ul>
+                <li>Applied feature extraction to identify road networks from probe data and Vehicle Probe Data (VPD).</li>
+                <li>Cleaned and processed the spatial data with GeoPandas and QGIS to improve its quality and usability for downstream analysis.</li>
+              </ul>
+            </dd></div>
+            <div><dt>Stack</dt><dd><ul class="tags"><li>Python</li><li>Pandas</li><li>NumPy</li><li>GeoPandas</li><li>QGIS</li></ul></dd></div>
+          </dl>
+        </article>
+
+        <article class="proj" id="p-sorting">
+          <div class="proj-h">
+            <div>
+              <p class="mono-label">Algorithms · C++</p>
+              <h3 class="t">Sorting System, an Algorithm Benchmarking Tool</h3>
+            </div>
+            <a class="ext" href="https://github.com/abdelrahmanakh/SortingSystem" target="_blank" rel="noopener">View on GitHub ↗</a>
+          </div>
+          <dl class="case">
+            <div><dt>Problem</dt><dd><p>Compare how classic sorting algorithms behave across data types and dataset sizes.</p></dd></div>
+            <div><dt>Approach</dt><dd>
+              <ul>
+                <li>Implemented <strong>9</strong> sorting algorithms (Insertion, Selection, Bubble, Shell, Merge, Quick, Count, Radix, Bucket) with detailed iteration output.</li>
+                <li>Built a template-based system that supports <strong>4</strong> data types: int, float, string and char.</li>
+                <li>Added microsecond-precision runtime measurement to benchmark each algorithm against varying dataset sizes.</li>
+              </ul>
+            </dd></div>
+            <div><dt>Stack</dt><dd><ul class="tags"><li>C++</li></ul></dd></div>
+          </dl>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="services" aria-labelledby="h-services">
+    <div class="wrap sec-grid">
+      <div class="label"><h2 id="h-services">Services</h2><p>Where I can help a team</p></div>
+      <div class="body">
+        <div class="svc">
+          <article>
+            <h3>LLM-powered developer tools</h3>
+            <p>Command-line and backend tools that call hosted models such as Llama-3.3 through LangChain, with prompts that enforce a fixed output standard.</p>
+            <ul class="tags"><li>LangChain</li><li>Groq API</li><li>Prompt engineering</li><li>Python</li></ul>
+            <p class="proof"><span class="mono-label">Evidence</span><a href="#p-tests">Automated Unit Testing Generator</a></p>
+          </article>
+          <article>
+            <h3>RAG and knowledge systems</h3>
+            <p>Question answering over documents, grounded by retrieval. I trained on retrieval-augmented generation and LLM application development and I am ready to apply it on a team.</p>
+            <ul class="tags"><li>RAG</li><li>LLMs</li><li>Prompt engineering</li></ul>
+            <p class="proof"><span class="mono-label">Evidence</span>NVIDIA DLI: Generative AI, Feb 2026</p>
+          </article>
+          <article>
+            <h3>Geospatial data processing</h3>
+            <p>Cleaning large spatial datasets and extracting features such as road networks from probe data.</p>
+            <ul class="tags"><li>GeoPandas</li><li>Pandas</li><li>NumPy</li><li>QGIS</li></ul>
+            <p class="proof"><span class="mono-label">Evidence</span><a href="#p-hackathon">HERE Cairo Geospatial Hackathon 2026</a></p>
+          </article>
+          <article>
+            <h3>Algorithms and performance</h3>
+            <p>Choosing the right algorithm, measuring it, and writing correct code under time pressure.</p>
+            <ul class="tags"><li>C++</li><li>Python</li><li>Algorithms</li><li>Data structures</li></ul>
+            <p class="proof"><span class="mono-label">Evidence</span><a href="#p-sorting">Sorting System benchmark</a> and the <a href="#achievements">contest results</a></p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="skills" aria-labelledby="h-skills">
+    <div class="wrap sec-grid">
+      <div class="label"><h2 id="h-skills">Skills</h2><p>Languages, tools and concepts I use</p></div>
+      <div class="body">
+        <dl class="skills">
+          <div><dt>Languages</dt><dd><ul class="tags"><li>Python</li><li>C++</li><li>SQL</li><li>Java</li><li>JavaScript</li><li>HTML</li><li>CSS</li></ul></dd></div>
+          <div><dt>Frameworks and tools</dt><dd><ul class="tags"><li>LangChain</li><li>Pandas</li><li>NumPy</li><li>GeoPandas</li><li>Matplotlib</li><li>Scikit-learn</li><li>Pytest</li><li>Groq API</li><li>QGIS</li></ul></dd></div>
+          <div><dt>Concepts</dt><dd><ul class="tags"><li>Machine Learning</li><li>Large Language Models (LLMs)</li><li>Prompt Engineering</li><li>Retrieval-Augmented Generation (RAG)</li><li>Data Analysis</li><li>Feature Engineering</li><li>Algorithms</li><li>Data Structures</li><li>OOP</li><li>Software Engineering</li><li>Database Systems</li></ul></dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="achievements" aria-labelledby="h-ach">
+    <div class="wrap sec-grid">
+      <div class="label"><h2 id="h-ach">Achievements</h2><p>Contest results, 2022 to 2025</p></div>
+      <div class="body">
+        <div class="big">
+          <p>2000+<span>problems solved in algorithms and data structures</span></p>
+          <p>110+<span>online contests entered</span></p>
+        </div>
+
+        <ul>
+          <li class="stand">
+            <time datetime="2025-11">Nov 2025</time>
+            <div class="what"><strong>Meta Hacker Cup 2025</strong><span>Qualified to Round 2 and earned a Meta T-shirt</span></div>
+            <div class="score">
+              <div class="score-row"><span class="rank">814 / 13,779</span><span class="pct">Top 6%</span></div>
+              <div class="bar" role="img" aria-label="Ahead of 94% of participants"><span style="width:94.1%"></span></div>
+            </div>
+          </li>
+          <li class="stand">
+            <time datetime="2025-08">Aug 2025</time>
+            <div class="what"><strong>ICPC Egyptian Collegiate Programming Contest</strong><span>2025 edition</span></div>
+            <div class="score">
+              <div class="score-row"><span class="rank">40 / 430+</span><span class="pct">Top 10%</span></div>
+              <div class="bar" role="img" aria-label="Ahead of at least 90% of teams"><span style="width:90.7%"></span></div>
+            </div>
+          </li>
+          <li class="stand">
+            <time datetime="2024-12">Dec 2024</time>
+            <div class="what"><strong>ICPC Africa and Arab Collegiate Programming Championship</strong><span>2024 edition</span></div>
+            <div class="score">
+              <div class="score-row"><span class="rank">18 / 110+</span><span class="pct">Top 17%</span></div>
+              <div class="bar" role="img" aria-label="Ahead of at least 83% of teams"><span style="width:83.6%"></span></div>
+            </div>
+          </li>
+          <li class="stand">
+            <time datetime="2024-07">Jul 2024</time>
+            <div class="what"><strong>ECPC Qualifications, Day 5</strong><span>2024 edition</span></div>
+            <div class="score">
+              <div class="score-row"><span class="rank">3 / 300+</span><span class="pct">Top 1%</span></div>
+              <div class="bar" role="img" aria-label="Ahead of at least 99% of teams"><span style="width:99%"></span></div>
+            </div>
+          </li>
+          <li class="stand plain">
+            <time datetime="2022-12">Dec 2022</time>
+            <div class="what"><strong>Silver Honour</strong><span>IYMC International Youth Math Challenge</span></div>
+          </li>
+          <li class="stand plain">
+            <time datetime="2022-06">Jun 2022</time>
+            <div class="what"><strong>Gold Award</strong><span>Design Thinking With Robotics and Computational Thinking International Competition, Grade 11/12</span></div>
+          </li>
+        </ul>
+
+        <p class="fine">Each bar shows the share of the field I finished ahead of, drawn to scale. Percentages round up, and fields marked + are counted at their stated minimum, so the true result is equal or better.</p>
+        <p class="links">
+          <a href="https://icpc.global/ICPCID/JZPYTLJN3X6L" target="_blank" rel="noopener">ICPC profile ↗</a>
+          <a href="https://codeforces.com/profile/PG_Mazen" target="_blank" rel="noopener">Codeforces profile ↗</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="experience" aria-labelledby="h-exp">
+    <div class="wrap sec-grid">
+      <div class="label"><h2 id="h-exp">Experience</h2><p>Teaching and problem setting</p></div>
+      <div class="body">
+        <article class="entry">
+          <div>
+            <h3>Data Structures and Algorithms Coach and Problem Setter</h3>
+            <p class="org">Faculty Community, Cairo University · Giza, Egypt</p>
+          </div>
+          <time>Sep 2024 – May 2025</time>
+          <ul class="more">
+            <li>Mentored <strong>100+ students</strong> in data structures and algorithms, preparing them for the ECPC and ACPC competitive programming contests.</li>
+            <li>Worked with a team of problem setters to write problems with full solutions and test case suites.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="education" aria-labelledby="h-edu">
+    <div class="wrap sec-grid">
+      <div class="label"><h2 id="h-edu">Education</h2><p>Cairo University, 2023 to 2027</p></div>
+      <div class="body">
+        <article class="entry">
+          <div>
+            <h3>Bachelor of Science in Artificial Intelligence</h3>
+            <p class="org">Faculty of Computers and Artificial Intelligence, Cairo University</p>
+          </div>
+          <time>Sep 2023 – Expected Jun 2027</time>
+          <div class="more">
+            <p>GPA 3.42 / 4.0. Ranked 20th out of 170+ students in the AI Department.</p>
+            <ul class="tags"><li>Machine Learning</li><li>Data Structures</li><li>Database Systems</li><li>Software Engineering</li><li>Computer Networks</li><li>Operating Systems</li><li>Computer Architecture</li><li>OOP</li><li>Web Technologies</li><li>Computational Cognitive Science</li></ul>
+          </div>
+        </article>
+        <article class="entry">
+          <div>
+            <h3>Obour STEM School</h3>
+            <p class="org">High School Graduate</p>
+          </div>
+          <time>Sep 2020 – Jul 2023</time>
+        </article>
+
+        <p class="mono-label sub">Certifications and training</p>
+        <article class="entry">
+          <div>
+            <h3>NVIDIA DLI: Generative AI</h3>
+            <p class="org">Information Technology Institute (ITI)</p>
+          </div>
+          <time>Feb 2026</time>
+          <div class="more"><ul class="tags"><li>Generative AI</li><li>LLMs</li><li>RAG</li><li>Prompt Engineering</li><li>Applied AI Workflows</li></ul></div>
+        </article>
+        <article class="entry">
+          <div>
+            <h3>Huawei HCIA: Artificial Intelligence</h3>
+            <p class="org">Huawei ICT Academy, Cairo University</p>
+          </div>
+          <time>Aug – Sep 2024</time>
+          <div class="more"><ul class="tags"><li>Supervised Learning</li><li>Unsupervised Learning</li><li>Deep Learning Architectures</li></ul></div>
+        </article>
+        <article class="entry">
+          <div>
+            <h3>Competitive Programming Training, Level 2 and 3</h3>
+            <p class="org">Coach Academy</p>
+          </div>
+          <time>Jan – Sep 2022</time>
+          <div class="more"><ul class="tags"><li>Graph Theory</li><li>Dynamic Programming</li><li>String Hashing</li><li>Number Theory</li><li>Segment Trees</li><li>Sparse Tables</li></ul></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="contact" aria-labelledby="h-contact">
+    <div class="wrap sec-grid">
+      <div class="label"><h2 id="h-contact">Contact</h2><p>Giza, Egypt</p></div>
+      <div class="body">
+        <p class="cta">Open to AI engineering internships.</p>
+        <p class="cta-p">I am looking for a team working on LLM applications or RAG systems. Send a short note about the role and I will get back to you.</p>
+
+        <dl class="contact">
+          <div>
+            <dt>Email</dt>
+            <dd class="val" id="c-email">mazen.mohamed.pg@gmail.com</dd>
+            <dd class="act"><button type="button" class="mini" data-copy="mazen.mohamed.pg@gmail.com" data-target="c-email">Copy</button><a class="mini" href="mailto:mazen.mohamed.pg@gmail.com">Open mail app</a></dd>
+          </div>
+          <div>
+            <dt>Phone</dt>
+            <dd class="val" id="c-phone">+20 102 265 3210</dd>
+            <dd class="act"><button type="button" class="mini" data-copy="+20 102 265 3210" data-target="c-phone">Copy</button></dd>
+          </div>
+          <div>
+            <dt>LinkedIn</dt>
+            <dd class="val"><a href="https://www.linkedin.com/in/mazen-mohamed-abdelsalam/" target="_blank" rel="noopener">linkedin.com/in/mazen-mohamed-abdelsalam</a></dd>
+          </div>
+          <div>
+            <dt>GitHub</dt>
+            <dd class="val"><a href="https://github.com/PG-Mazen" target="_blank" rel="noopener">github.com/PG-Mazen</a></dd>
+          </div>
+          <div>
+            <dt>Codeforces</dt>
+            <dd class="val"><a href="https://codeforces.com/profile/PG_Mazen" target="_blank" rel="noopener">codeforces.com/profile/PG_Mazen</a></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>Thank you for reading.</span>
+    <span>Mazen Mohamed Abdelsalam · Updated October 2026</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  function selectText(el) {
+    try {
+      var r = document.createRange();
+      r.selectNodeContents(el);
+      var s = window.getSelection();
+      s.removeAllRanges();
+      s.addRange(r);
+    } catch (e) {}
+  }
+
+  document.querySelectorAll('[data-copy]').forEach(function (btn) {
+    var label = btn.textContent;
+    btn.addEventListener('click', function () {
+      var el = document.getElementById(btn.getAttribute('data-target'));
+      function done(msg) {
+        btn.textContent = msg;
+        setTimeout(function () { btn.textContent = label; }, 1800);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(btn.getAttribute('data-copy')).then(
+          function () { done('Copied'); },
+          function () { selectText(el); done('Selected'); }
+        );
+      } else {
+        selectText(el);
+        done('Selected');
+      }
+    });
+  });
+
+  var cv = document.getElementById('cv-link');
+  var note = document.getElementById('cv-note');
+  var downloads = null;
+  if (window.claude && window.claude.use) {
+    window.claude.use('downloads').then(function (m) { downloads = m; }, function () {});
+  }
+  cv.addEventListener('click', function (e) {
+    if (!downloads) return;
+    e.preventDefault();
+    note.textContent = '';
+    fetch(cv.getAttribute('href'))
+      .then(function (r) { if (!r.ok) throw new Error('fetch'); return r.blob(); })
+      .then(function (b) { return downloads.save({ filename: 'Mazen-Mohamed-Resume.pdf', data: b }); })
+      .catch(function (err) {
+        if (err && err.code === 'declined') return;
+        note.textContent = 'The download could not start. The CV is also linked from my LinkedIn profile.';
+      });
+  });
+})();
+</script>
+
+</body></html>
